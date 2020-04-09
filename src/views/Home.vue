@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
 		<div class="form">
-			<!-- <h3>COVID19 IMPACT ESTIMATOR</h3> -->
+			<!-- COVID19 IMPACT ESTIMATOR -->
 			<form @submit.prevent="getImpactResult">
 				<div class="form-group">
 					<label class="mb-0">Population</label>
@@ -9,6 +9,7 @@
 						for="data-population"
 						name="data-population"
 						class="form-control"
+						attribute="data-population"
 						v-model.number="dataInput.population"
 						type="number"
 						placeholder="Enter population size"
@@ -20,6 +21,7 @@
 					<input
 						for="data-time-to-elapse"
 						name="data-time-to-elapse"
+						attribute="data-time-to-elapse"
 						class="form-control"
 						v-model.number="dataInput.timeToElapse"
 						type="number"
@@ -33,6 +35,7 @@
 						<option
 							for="data-period-type"
 							name="data-period-type"
+							attribute="data-period-type"
 							:value="type"
 							v-for="type in typeOfPeriod"
 							:key="type"
@@ -47,6 +50,7 @@
 					<input
 						for="data-reported-cases"
 						name="data-reported-cases"
+						attribute="data-reported-cases"
 						class="form-control"
 						v-model.number="dataInput.reportedCases"
 						type="number"
@@ -59,6 +63,7 @@
 					<input
 						for="data-total-hospital-beds"
 						name="data-total-hospital-beds"
+						attribute="data-total-hospital-beds"
 						class="form-control"
 						v-model.number="dataInput.totalHospitalBeds"
 						type="number"
@@ -69,6 +74,7 @@
 				<button
 					for="data-go-estimate"
 					name="data-go-estimate"
+					attribute="data-go-estimate"
 					type="submit"
 					class="btn btn-block btn-primary"
 				>
