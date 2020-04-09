@@ -4,7 +4,7 @@
 			<!-- COVID19 IMPACT ESTIMATOR -->
 			<form @submit.prevent="getImpactResult">
 				<div class="form-group">
-					<label class="mb-0">Population</label>
+					<label for="population" class="mb-0">Population</label>
 					<input
 						for="data-population"
 						name="data-population"
@@ -17,7 +17,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="mb-0">Time Period</label>
+					<label for="time-period" class="mb-0">Time Period</label>
 					<input
 						for="data-time-to-elapse"
 						name="data-time-to-elapse"
@@ -30,7 +30,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="mb-0">Type of time period</label>
+					<label for="time-period-type" class="mb-0">Type of time period</label>
 					<select v-model="dataInput.periodType" class="form-control">
 						<option
 							for="data-period-type"
@@ -46,7 +46,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="mb-0">Number of Reported Cases</label>
+					<label for="reported-cases" class="mb-0">Number of Reported Cases</label>
 					<input
 						for="data-reported-cases"
 						name="data-reported-cases"
@@ -59,7 +59,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="mb-0">Total Hospital Beds</label>
+					<label for="total-hospital-beds" class="mb-0">Total Hospital Beds</label>
 					<input
 						for="data-total-hospital-beds"
 						name="data-total-hospital-beds"
