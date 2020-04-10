@@ -30,7 +30,7 @@
 					<option
 						for="data-period-type"
 						name="data-period-type"
-						data-period-type=""
+						:data-period-type="typeOfPeriod"
 						:value="type"
 						v-for="type in typeOfPeriod"
 						:key="type"
@@ -184,6 +184,7 @@ export default {
 		getImpactResult() {
 			this.covid19ImpactEstimator(this.dataInput)
 			this.dataInput = this.getFreshData()
+			console.log(data - period - type)
 		},
 	},
 }
