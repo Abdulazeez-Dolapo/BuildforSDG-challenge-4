@@ -1,96 +1,71 @@
 <template>
 	<div class="home">
 		<div class="form">
-			<!-- COVID19 IMPACT ESTIMATOR -->
+			<p>COVID19 IMPACT ESTIMATOR</p>
 			<form @submit.prevent="getImpactResult">
-				<div class="form-group">
-					<label for="population" class="mb-0">Population</label>
-					<input
-						id="population"
-						for="data-population"
-						name="data-population"
-						class="form-control"
-						attribute="data-population"
-						v-model.number="dataInput.population"
-						type="number"
-						placeholder="Enter population size"
-					/>
-				</div>
+				<label for="population">Population</label>
+				<input
+					id="population"
+					for="data-population"
+					name="data-population"
+					attribute="data-population"
+					v-model.number="dataInput.population"
+					type="number"
+					placeholder="Enter population size"
+				/>
 
-				<div class="form-group">
-					<label for="time-period" class="mb-0">Time Period</label>
-					<input
-						id="time-period"
-						for="data-time-to-elapse"
-						name="data-time-to-elapse"
-						attribute="data-time-to-elapse"
-						class="form-control"
-						v-model.number="dataInput.timeToElapse"
-						type="number"
-						placeholder="Enter time period"
-					/>
-				</div>
+				<label for="time-period">Time Period</label>
+				<input
+					id="time-period"
+					for="data-time-to-elapse"
+					name="data-time-to-elapse"
+					attribute="data-time-to-elapse"
+					v-model.number="dataInput.timeToElapse"
+					type="number"
+					placeholder="Enter time period"
+				/>
 
-				<div class="form-group">
-					<label for="time-period-type" class="mb-0"
-						>Type of time period</label
+				<label for="time-period-type">Type of time period</label>
+				<select id="time-period-type" v-model="dataInput.periodType">
+					<option
+						for="data-period-type"
+						name="data-period-type"
+						attribute="data-period-type"
+						:value="type"
+						v-for="type in typeOfPeriod"
+						:key="type"
 					>
-					<select
-						id="time-period-type"
-						v-model="dataInput.periodType"
-						class="form-control"
-					>
-						<option
-							for="data-period-type"
-							name="data-period-type"
-							attribute="data-period-type"
-							:value="type"
-							v-for="type in typeOfPeriod"
-							:key="type"
-						>
-							{{ type }}
-						</option>
-					</select>
-				</div>
+						{{ type }}
+					</option>
+				</select>
 
-				<div class="form-group">
-					<label for="reported-cases" class="mb-0"
-						>Number of Reported Cases</label
-					>
-					<input
-						id="reported-cases"
-						for="data-reported-cases"
-						name="data-reported-cases"
-						attribute="data-reported-cases"
-						class="form-control"
-						v-model.number="dataInput.reportedCases"
-						type="number"
-						placeholder="Enter number of reported cases"
-					/>
-				</div>
+				<label for="reported-cases">Number of Reported Cases</label>
+				<input
+					id="reported-cases"
+					for="data-reported-cases"
+					name="data-reported-cases"
+					attribute="data-reported-cases"
+					v-model.number="dataInput.reportedCases"
+					type="number"
+					placeholder="Enter number of reported cases"
+				/>
 
-				<div class="form-group">
-					<label for="total-hospital-beds" class="mb-0"
-						>Total Hospital Beds</label
-					>
-					<input
-						id="total-hospital-beds"
-						for="data-total-hospital-beds"
-						name="data-total-hospital-beds"
-						attribute="data-total-hospital-beds"
-						class="form-control"
-						v-model.number="dataInput.totalHospitalBeds"
-						type="number"
-						placeholder="Enter number of hospital beds"
-					/>
-				</div>
+				<label for="total-hospital-beds">Total Hospital Beds</label>
+				<input
+					id="total-hospital-beds"
+					for="data-total-hospital-beds"
+					name="data-total-hospital-beds"
+					attribute="data-total-hospital-beds"
+					v-model.number="dataInput.totalHospitalBeds"
+					type="number"
+					placeholder="Enter number of hospital beds"
+				/>
 
 				<button
 					for="data-go-estimate"
 					name="data-go-estimate"
 					attribute="data-go-estimate"
 					type="submit"
-					class="btn btn-block btn-primary"
 				>
 					Submit
 				</button>
@@ -229,16 +204,48 @@ export default {
 	bottom: 0;
 	left: 0;
 }
+
+p {
+	font-style: italic;
+	font-size: 1.4em;
+	margin-top: 0.5em;
+}
+
 .form {
 	background-color: white;
 	min-height: 75vh;
-	width: 40%;
-	margin: 2em auto;
-	padding: 2rem;
+	width: 30%;
+	margin: 1em auto;
+	padding: 0.1rem 2rem 0.5rem;
 	font-weight: bolder;
+	font-size: 1.1em;
 }
-.form-control::-webkit-input-placeholder {
-	color: #575757 !important;
-	opacity: 1;
+input,
+label,
+select {
+	display: block;
+	min-width: 80%;
+	height: 2em;
+	font-size: 1em;
+}
+
+select {
+	margin-bottom: 1em;
+}
+
+input {
+	margin-bottom: 1em;
+	border: solid black 1px;
+	border-radius: 1px;
+	font-size: 1em;
+}
+
+button {
+	border-radius: 0.5em;
+	width: 50%;
+	height: 2em;
+	font-size: 1em;
+	font-weight: bolder;
+	background-color: whitesmoke;
 }
 </style>
