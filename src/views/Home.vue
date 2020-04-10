@@ -8,7 +8,7 @@
 					id="population"
 					for="data-population"
 					name="data-population"
-					attribute="data-population"
+					data-population=""
 					v-model.number="dataInput.population"
 					type="number"
 					placeholder="Enter population size"
@@ -19,7 +19,7 @@
 					id="time-period"
 					for="data-time-to-elapse"
 					name="data-time-to-elapse"
-					attribute="data-time-to-elapse"
+					data-time-to-elapse=""
 					v-model.number="dataInput.timeToElapse"
 					type="number"
 					placeholder="Enter time period"
@@ -30,7 +30,7 @@
 					<option
 						for="data-period-type"
 						name="data-period-type"
-						attribute="data-period-type"
+						data-period-type=""
 						:value="type"
 						v-for="type in typeOfPeriod"
 						:key="type"
@@ -44,7 +44,7 @@
 					id="reported-cases"
 					for="data-reported-cases"
 					name="data-reported-cases"
-					attribute="data-reported-cases"
+					data-reported-cases=""
 					v-model.number="dataInput.reportedCases"
 					type="number"
 					placeholder="Enter number of reported cases"
@@ -55,7 +55,7 @@
 					id="total-hospital-beds"
 					for="data-total-hospital-beds"
 					name="data-total-hospital-beds"
-					attribute="data-total-hospital-beds"
+					data-total-hospital-beds=""
 					v-model.number="dataInput.totalHospitalBeds"
 					type="number"
 					placeholder="Enter number of hospital beds"
@@ -64,7 +64,7 @@
 				<button
 					for="data-go-estimate"
 					name="data-go-estimate"
-					attribute="data-go-estimate"
+					data-go-estimate=""
 					type="submit"
 				>
 					Submit
