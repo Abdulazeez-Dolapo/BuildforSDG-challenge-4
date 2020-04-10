@@ -6,6 +6,7 @@
 				<div class="form-group">
 					<label for="population" class="mb-0">Population</label>
 					<input
+						id="population"
 						for="data-population"
 						name="data-population"
 						class="form-control"
@@ -19,6 +20,7 @@
 				<div class="form-group">
 					<label for="time-period" class="mb-0">Time Period</label>
 					<input
+						id="time-period"
 						for="data-time-to-elapse"
 						name="data-time-to-elapse"
 						attribute="data-time-to-elapse"
@@ -30,8 +32,14 @@
 				</div>
 
 				<div class="form-group">
-					<label for="time-period-type" class="mb-0">Type of time period</label>
-					<select v-model="dataInput.periodType" class="form-control">
+					<label for="time-period-type" class="mb-0"
+						>Type of time period</label
+					>
+					<select
+						id="time-period-type"
+						v-model="dataInput.periodType"
+						class="form-control"
+					>
 						<option
 							for="data-period-type"
 							name="data-period-type"
@@ -46,8 +54,11 @@
 				</div>
 
 				<div class="form-group">
-					<label for="reported-cases" class="mb-0">Number of Reported Cases</label>
+					<label for="reported-cases" class="mb-0"
+						>Number of Reported Cases</label
+					>
 					<input
+						id="reported-cases"
 						for="data-reported-cases"
 						name="data-reported-cases"
 						attribute="data-reported-cases"
@@ -59,8 +70,11 @@
 				</div>
 
 				<div class="form-group">
-					<label for="total-hospital-beds" class="mb-0">Total Hospital Beds</label>
+					<label for="total-hospital-beds" class="mb-0"
+						>Total Hospital Beds</label
+					>
 					<input
+						id="total-hospital-beds"
 						for="data-total-hospital-beds"
 						name="data-total-hospital-beds"
 						attribute="data-total-hospital-beds"
@@ -110,8 +124,6 @@ export default {
 			}
 		},
 		getImpactResult() {
-			console.log(this.dataInput)
-			covid19ImpactEstimator(this.dataInput)
 			this.getFreshData()
 		},
 	},
@@ -140,5 +152,9 @@ export default {
 	margin: 2em auto;
 	padding: 2rem;
 	font-weight: bolder;
+}
+.form-control::-webkit-input-placeholder {
+	color: #575757 !important;
+	opacity: 1;
 }
 </style>
