@@ -30,7 +30,7 @@
 					<option
 						for="data-period-type"
 						name="data-period-type"
-						:data-period-type="typeOfPeriod"
+						:data-period-type="['days', 'weeks', 'months']"
 						:value="type"
 						v-for="type in typeOfPeriod"
 						:key="type"
