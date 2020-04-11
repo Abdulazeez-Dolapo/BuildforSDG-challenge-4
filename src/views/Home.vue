@@ -26,11 +26,14 @@
 				/>
 
 				<label for="time-period-type">Type of time period</label>
-				<select id="time-period-type" v-model="dataInput.periodType">
+				<select
+					id="time-period-type"
+					data-period-type="['days', 'weeks', 'months']"
+					v-model="dataInput.periodType"
+				>
 					<option
 						for="data-period-type"
 						name="data-period-type"
-						:data-period-type="['days', 'weeks', 'months']"
 						:value="type"
 						v-for="type in typeOfPeriod"
 						:key="type"
